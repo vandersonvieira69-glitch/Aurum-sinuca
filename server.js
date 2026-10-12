@@ -10,7 +10,7 @@ const {v4:uuid}=require('uuid');
 const app=express();
 const server=http.createServer(app);
 const io=new Server(server,{cors:{origin:true,methods:['GET','POST']}});
-const db=new Database(path.join(__dirname,'data','aurum.db'));
+const db=new Database(path.join(__dirname,'aurum.db'))
 db.pragma('journal_mode=WAL');
 app.use(helmet({contentSecurityPolicy:false}));
 app.use(express.json());
